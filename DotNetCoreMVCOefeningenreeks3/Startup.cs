@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using DotNetCoreMVCOefeningenreeks3.Common.RouteConstraints;
 
 namespace DotNetCoreMVCOefeningenreeks3
 {
@@ -22,6 +24,10 @@ namespace DotNetCoreMVCOefeningenreeks3
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.Configure<RouteOptions>(routeOptions =>
+            {
+                routeOptions.ConstraintMap.Add("GeslachtKeuze", typeof(GeslachtKeuzeConstraint));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +45,7 @@ namespace DotNetCoreMVCOefeningenreeks3
 
             app.UseStaticFiles();
 
+            
             app.UseMvc();
         }
     }

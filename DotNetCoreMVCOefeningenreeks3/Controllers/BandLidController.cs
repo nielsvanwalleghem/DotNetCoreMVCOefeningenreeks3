@@ -22,8 +22,8 @@ namespace DotNetCoreMVCOefeningenreeks3.Controllers
             return View(bands);
         }
 
-        [Route("[action]/[controller]/{bandlidnaam}/{bandlidjaar:int}/{geslacht}/{bandnaam}")]
-        [Route("[action][controller]/Naam/{bandlidnaam}/Jaar/{bandlidjaar:int}/Geslacht/{geslacht}/Band/{bandnaam}")]
+        [Route("[action]/[controller]/{bandlidnaam}/{bandlidjaar:int}/{geslacht:GeslachtKeuze}/{bandnaam}")]
+        [Route("[action][controller]/Naam/{bandlidnaam}/Jaar/{bandlidjaar:int}/Geslacht/{geslacht:GeslachtKeuze}/Band/{bandnaam}")]
         [HttpGet("[controller]/[action]")]
         public IActionResult Maak(string bandlidnaam, int bandlidjaar, Geslacht geslacht, string bandnaam)
         {

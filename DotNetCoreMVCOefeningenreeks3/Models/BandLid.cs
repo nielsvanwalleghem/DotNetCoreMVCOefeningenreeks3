@@ -9,7 +9,7 @@ namespace DotNetCoreMVCOefeningenreeks3.Models
     public enum Geslacht
     {
         Man,
-        Vrouw
+        Vrouw,
     }
 
     public class BandLid
