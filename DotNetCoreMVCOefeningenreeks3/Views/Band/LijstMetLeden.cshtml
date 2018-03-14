@@ -1,0 +1,21 @@
+﻿@model IEnumerable<DotNetCoreMVCOefeningenreeks3.Models.Band>
+@using DotNetCoreMVCOefeningenreeks3.Models
+<h2>Bands met hun leden</h2>
+
+<ol>
+    @foreach (Band band in Model)
+    {
+        <li>
+            @band.Naam (@band.Jaar)
+            <ul>
+                @foreach (BandLid bandlid in band.Leden)
+                {
+                    <li>
+                        @bandlid.Naam - @bandlid.Leeftijd @(!bandlid.Levend ? "(+)" : "" ) - @bandlid.Geslacht
+                    </li>
+                }
+            </ul>
+        </li>
+    }
+</ol>
+

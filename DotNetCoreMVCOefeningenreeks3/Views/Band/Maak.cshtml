@@ -1,0 +1,21 @@
+﻿
+@model DotNetCoreMVCOefeningenreeks3.Models.Band
+
+<h2>@Model.GetType().Name</h2>
+
+<form asp-controller="Band" asp-action="VoegToe" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <label asp-for="Naam"></label>
+    <input asp-for="Naam" class="form-control" />
+    <span asp-validation-for="Naam" class="text-danger"></span>
+    <br />
+    <label asp-for="Jaar"></label>
+    <input asp-for="Jaar" class="form-control" />
+    <span asp-validation-for="Jaar" class="text-danger"></span>
+    <br />
+    <input type="submit" value="Voeg toe" />
+</form>
+
+
+

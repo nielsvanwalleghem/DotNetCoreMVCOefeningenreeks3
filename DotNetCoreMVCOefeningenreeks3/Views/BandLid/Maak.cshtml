@@ -1,0 +1,26 @@
+﻿@model DotNetCoreMVCOefeningenreeks3.Models.BandLid
+@using DotNetCoreMVCOefeningenreeks3.Models
+
+<h2>@Model.GetType().Name</h2>
+
+<form asp-controller="BandLid" asp-action="VoegToe" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <label asp-for="Naam"></label>
+    <input asp-for="Naam" class="form-control" />
+    <span asp-validation-for="Naam" class="text-danger"></span>
+    <br />
+    <label asp-for="Leeftijd"></label>
+    <input asp-for="Leeftijd" class="form-control" />
+    <span asp-validation-for="Leeftijd" class="text-danger"></span>
+    <br />
+    <label asp-for="Geslacht"></label>
+    <select asp-for="Geslacht" asp-items="new SelectList(Enum.GetValues(typeof(Geslacht)))" class="form-control"></select>
+    <br />
+    <label for="Band">Band</label>
+    <input id="Band" name="band" value="@((string)ViewBag.bandnaam)" class="form-control" />
+    <br />
+    <input type="submit" value="Voeg toe" />
+</form>
+
+
